@@ -1,23 +1,57 @@
 import logo from './logo.svg';
 import './App.css';
+import {Kanban} from './Kanban'
 
 function App() {
+
+  const resp = [{
+    name: 'Open',
+    color: '#f5d8d8',
+    cardList: [{
+      title: 'Setup react project',
+      description: 'project setup',
+      lastUpdated: '2021-11-23'
+    },
+    {
+      title: 'Setup node project',
+      description: 'project setup',
+      lastUpdated: '2021-11-23'
+    },
+    {
+      title: 'Analyse existing system',
+      description: 'project setup',
+      lastUpdated: '2021-11-23'
+    }]
+  },
+
+  {
+    name: 'In Progress',
+    color: '#dedec0',
+    cardList: [{
+      title: 'DB setup',
+      description: 'db setup',
+      lastUpdated: '2021-03-12'
+    },
+    {
+      title: 'DB schema',
+      description: 'db setup',
+      lastUpdated: '2021-03-12'
+    }]
+  },
+
+  {
+    name: 'Resolved',
+    color: '#f9f4e',
+    cardList: [{
+      title: 'Finalise Tech stack',
+      description: 'finalise tech stack',
+      lastUpdated: '2021-01-03'
+    }]
+  }];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Kanban columnList={resp} />
     </div>
   );
 }
