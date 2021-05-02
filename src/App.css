@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   width: fit-content;
-  border: 1px solid gray;
+  border: 1px solid #f7f4f4;
   margin: 10px;
 }
 
@@ -38,4 +38,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.label {
+  color: #4c3939;
 }

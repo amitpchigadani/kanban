@@ -1,7 +1,9 @@
 .column {
-		display: 'flex';
-		flex-direction: 'column';
-		width: '200px';
-		background-color: props.color;
-		border-right: '1px solid gray'
-	}
+	display: flex;
+	flex-direction: column;
+}
+
+.label {
+	border-bottom: 1px solid gray;
+    font-size: 20px;
+}

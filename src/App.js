@@ -41,7 +41,7 @@ function App() {
 
   {
     name: 'Resolved',
-    color: '#f9f4e',
+    color: '#E0DEDC',
     cardList: [{
       title: 'Finalise Tech stack',
       description: 'finalise tech stack',
