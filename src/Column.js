@@ -5,7 +5,7 @@ export const Column = (props) => {
 	
 	const list = [];
 	const styles = {
-		'background-color': props.color
+		backgroundColor: props.color
 	}
 	props?.column?.forEach((col, i) => {
 		list.push(<Card key={i} style={styles} title={col.title} description={col.description} lastUpdated={col.lastUpdated}></Card>)
