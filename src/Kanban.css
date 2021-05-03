@@ -1,4 +1,24 @@
 .kanban {
 	display: flex;
-	background-color: #fbfbfb;
+    background-color: #fbfbfb;
+    box-shadow: 2px 2px #e0e4e6;
+}
+
+.modal-form {
+	display: flex;
+	flex-direction: column;
+}
+
+input[type="text"], textarea {
+    margin-bottom: 25px !important;
+}
+
+textarea {
+	height: 200px;
+}
+
+.toolbar {
+	width: 250px;
+	display: flex;
+	justify-content: space-between;;
 }

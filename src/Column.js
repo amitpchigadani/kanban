@@ -8,7 +8,7 @@ export const Column = (props) => {
 		backgroundColor: props.color
 	}
 	props?.column?.forEach((col, i) => {
-		list.push(<Card key={i} style={styles} title={col.title} description={col.description} lastUpdated={col.lastUpdated}></Card>)
+		list.push(<Card key={i} style={styles} card={col}></Card>)
 	});
 
 	return (

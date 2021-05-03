@@ -10,17 +10,20 @@ function App() {
     cardList: [{
       title: 'Setup react project',
       description: 'project setup',
-      lastUpdated: '2021-11-23'
+      lastUpdated: '2021-11-23',
+      storyPoint: 2
     },
     {
       title: 'Setup node project',
       description: 'project setup',
-      lastUpdated: '2021-11-23'
+      lastUpdated: '2021-11-23',
+      storyPoint: 1
     },
     {
       title: 'Analyse existing system',
       description: 'project setup',
-      lastUpdated: '2021-11-23'
+      lastUpdated: '2021-11-23',
+      storyPoint: 2
     }]
   },
 
@@ -30,12 +33,14 @@ function App() {
     cardList: [{
       title: 'DB setup',
       description: 'db setup',
-      lastUpdated: '2021-03-12'
+      lastUpdated: '2021-03-12',
+      storyPoint: 3
     },
     {
       title: 'DB schema',
       description: 'db setup',
-      lastUpdated: '2021-03-12'
+      lastUpdated: '2021-03-12',
+      storyPoint: 1
     }]
   },
 

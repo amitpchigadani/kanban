@@ -1,10 +1,11 @@
 Kanban board view
-Features done:
-1. Show columns and cards
-2. Add new column
+
+Features Completed:
+- Show columns and cards
+- Add new column
+- Add new card on a column dynamically
 
 Upcoming:
-1. Add new card on a column
-2. Add attachments to a card
-3. Drag cards from one column to another
-4. Drag cards within the column
+- Add attachments to a card
+- Drag cards from one column to another
+- Drag cards within the column

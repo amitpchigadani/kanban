@@ -7,4 +7,6 @@
 .label {
 	border-bottom: 1px solid gray;
     font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
