@@ -1,7 +1,6 @@
-
-import {Column} from './Column';
+import { Column } from './Column';
 import './Kanban.css';
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -10,7 +9,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 export const Kanban = (props) => {
 
 	const list = [];
-  	const colDropDownItems = [];
+	const colDropDownItems = [];
 
 	let newColumn = '';
 	let newCard = {
@@ -24,19 +23,19 @@ export const Kanban = (props) => {
 	const [show, setShow] = useState(false);
 	const [cardShow, setCardShow] = useState(false);
 
-  	const handleClose = () => setShow(false);
-  	const handleShow = () => setShow(true);
-  	const handleCardClose = () => setCardShow(false);
-  	const handleCardShow = () => setCardShow(true);
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
+	const handleCardClose = () => setCardShow(false);
+	const handleCardShow = () => setCardShow(true);
 
 	columns.forEach((col, i) => {
-		list.push(<Column color={col.color} name={col.name} key={i} column={col.cardList}></Column>)
-		colDropDownItems.push(<Dropdown.Item key={i} eventKey={col.name}>{col.name}</Dropdown.Item>)
+		list.push(<Column color={col.color} name={col.name} key={i} column={col.cardList}></Column>);
+		colDropDownItems.push(<Dropdown.Item key={i} eventKey={col.name}>{col.name}</Dropdown.Item>);
 	});
 
 	const nameChange = (e) => {
-    	newColumn = e.target.value;
-  	}
+		newColumn = e.target.value;
+	}
 
 	const addColumn = () => {
 		const col = {
@@ -65,7 +64,7 @@ export const Kanban = (props) => {
 		const d = new Date();
 		newCard.lastUpdated = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate();
 		const selectedColIndex = columns.findIndex(col => col.name === newCard.columnName);
-		if(selectedColIndex > -1) {
+		if (selectedColIndex > -1) {
 			const columnList = [...columns];
 			columnList[selectedColIndex].cardList.push(newCard);
 			setColumns([...columnList]);
@@ -88,54 +87,54 @@ export const Kanban = (props) => {
 				</Button>
 			</div>
 			<Modal
-		        show={show}
-		        onHide={handleClose}
-		        backdrop="static"
-		        keyboard={false}
-		      	>
-		        <Modal.Header closeButton>
-		          <Modal.Title>Create Column</Modal.Title>
-		        </Modal.Header>
-		        <Modal.Body>
-					<input type="text" placeholder="Column name" onChange={ nameChange }/>
-		        </Modal.Body>
-		        <Modal.Footer>
-		          <Button variant="secondary" onClick={handleClose}>
-		            Close
+				show={show}
+				onHide={handleClose}
+				backdrop="static"
+				keyboard={false}
+			>
+				<Modal.Header closeButton>
+					<Modal.Title>Create Column</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>
+					<input type="text" placeholder="Column name" onChange={nameChange} />
+				</Modal.Body>
+				<Modal.Footer>
+					<Button variant="secondary" onClick={handleClose}>
+						Close
 		          </Button>
-		          <Button variant="primary" onClick={addColumn}>
-		            Add
+					<Button variant="primary" onClick={addColumn}>
+						Add
 		          </Button>
-		        </Modal.Footer>
-      		</Modal>
-      		<Modal
-		        show={cardShow}
-		        onHide={handleCardClose}
-		        backdrop="static"
-		        keyboard={false}
-		      	>
-		        <Modal.Header closeButton>
-		          <Modal.Title>New Task</Modal.Title>
-		        </Modal.Header>
-		        <Modal.Body>
-		        	<div className="modal-form">
-						<input type="text" placeholder="Title" onChange={ cardTitleChange }/>
-						<textarea type="text" placeholder="Description" onChange={ cardDescriptionChange }/>
-						<input type="text" placeholder="Story Points" onChange={ cardStoryPointChange }/>
+				</Modal.Footer>
+			</Modal>
+			<Modal
+				show={cardShow}
+				onHide={handleCardClose}
+				backdrop="static"
+				keyboard={false}
+			>
+				<Modal.Header closeButton>
+					<Modal.Title>New Task</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>
+					<div className="modal-form">
+						<input type="text" placeholder="Title" onChange={cardTitleChange} />
+						<textarea type="text" placeholder="Description" onChange={cardDescriptionChange} />
+						<input type="text" placeholder="Story Points" onChange={cardStoryPointChange} />
 						<DropdownButton id="dropdown-basic-button" title="Select Column" onSelect={columnSelectionChange}>
-						  {colDropDownItems}
+							{colDropDownItems}
 						</DropdownButton>
 					</div>
-		        </Modal.Body>
-		        <Modal.Footer>
-		          <Button variant="secondary" onClick={handleCardClose}>
-		            Close
+				</Modal.Body>
+				<Modal.Footer>
+					<Button variant="secondary" onClick={handleCardClose}>
+						Close
 		          </Button>
-		          <Button variant="primary" onClick={addCard}>
-		            Add
+					<Button variant="primary" onClick={addCard}>
+						Add
 		          </Button>
-		        </Modal.Footer>
-      		</Modal>
+				</Modal.Footer>
+			</Modal>
 			<div className="kanban">
 				{list}
 			</div>

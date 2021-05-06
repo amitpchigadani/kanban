@@ -1,7 +1,5 @@
 .kanban {
 	display: flex;
-    background-color: #fbfbfb;
-    box-shadow: 2px 2px #e0e4e6;
 }
 
 .modal-form {
@@ -20,5 +18,6 @@ textarea {
 .toolbar {
 	width: 250px;
 	display: flex;
-	justify-content: space-between;;
+	justify-content: space-between;
+	margin-bottom: 10px;
 }

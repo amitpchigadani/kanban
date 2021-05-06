@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {Kanban} from './Kanban'
+import { Kanban } from './Kanban'
 
 function App() {
 
