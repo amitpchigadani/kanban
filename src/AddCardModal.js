@@ -3,12 +3,14 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import './AddCardModal.css';
+import Attachment from './Attachment';
 
 export const AddCardModal = ({ cardShow: initCardShow, handleCardClose, addCard, columns }) => {
 
     const [colDropDownItems, setColDropDownItems] = useState([]);
     const [cardShow, setCardShow] = useState(initCardShow);
     const [validated, setValidated] = useState(false);
+    let attachments = 'none';
 
     const toggleModal = () => {
         setValidated(false);
@@ -29,13 +31,18 @@ export const AddCardModal = ({ cardShow: initCardShow, handleCardClose, addCard,
             title: form.get('title'),
             description: form.get('description'),
             storyPoint: form.get('points'),
-            columnName: form.get('column')
+            columnName: form.get('column'),
+            attachment: attachments
         };
         const d = new Date();
         newCard.lastUpdated = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate();
         setValidated(true);
         addCard(newCard);
     };
+
+    const onFileSelected = (files) => {
+        attachments = files.length > 0 ? files.map(file => file.name).join(', ') : 'none';
+    }
 
     return (
         <Modal
@@ -65,6 +72,10 @@ export const AddCardModal = ({ cardShow: initCardShow, handleCardClose, addCard,
                     <Form.Group controlId="points">
                         <Form.Label>Story Points</Form.Label>
                         <Form.Control name="points" required type="number" placeholder="Enter story points" />
+                    </Form.Group>
+
+                    <Form.Group controlId="attachment">
+                        <Attachment onFileSelected={onFileSelected}/>
                     </Form.Group>
                     <Button variant="secondary" onClick={handleCardClose}>
                         Close

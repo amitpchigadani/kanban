@@ -12,3 +12,16 @@
     margin-top: auto;
     font-size: 20px;
 }
+
+.attachment {
+    display: flex;
+}
+
+.attachment-name {
+    white-space: nowrap;
+    display: block;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
