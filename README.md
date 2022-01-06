@@ -1,4 +1,4 @@
-Kanban board view
+Kanban board Status
 
 Features Completed:
 - Show columns and cards
